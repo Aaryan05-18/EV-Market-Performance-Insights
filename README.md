@@ -46,19 +46,19 @@ https://public.tableau.com/app/profile/aaryan.chauhan2168/viz/Project1_179273374
 Add your screenshots to the `screenshots/` folder in this repository. Update the filenames below if your actual filenames differ.
 
 ### Home Page
-![Flask Home Page](Screenshots/Home.jpeg)
+![Flask Home Page](Screenshot/Home.jpeg)
 
 ### Interactive Tableau Dashboard
-![Tableau Dashboard](Screenshots/Main_Dashboard.jpeg)
+![Tableau Dashboard](Screenshot/Main_Dashboard.jpeg)
 
 ### KPI Metrics
-![EV KPI Metrics](Screenshots/KPI.jpeg)
+![EV KPI Metrics](Screenshot/KPI.jpeg)
 
 ### Methodology and Technology Stack
-![Methodology and Tech Stack](Screenshots/Technology.jpeg)
+![Methodology and Tech Stack](Screenshot/Technology.jpeg)
 
 ### Responsive Mobile View
-![Mobile Responsive View](Screenshots/Mobile_view.jpeg)
+![Mobile Responsive View](Screenshot/Mobile_view.jpeg)
 
 ## 📉 Dashboard Visualizations
 
