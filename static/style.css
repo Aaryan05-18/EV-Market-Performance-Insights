@@ -1,0 +1,109 @@
+/* Theme tokens: change colours here. */
+:root {
+  --navy-900: #06111f;
+  --navy-800: #0a1b30;
+  --navy-700: #10294a;
+  --line: #1c3a5e;
+  --teal: #2dd4bf;
+  --teal-deep: #0f9e8e;
+  --text: #e8f1f6;
+  --muted: #9db4c6;
+  --font: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--navy-900);
+}
+a { color: var(--teal); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+.wrap { width: min(1160px, 100% - 2.5rem); margin-inline: auto; }
+.skip-link { position: absolute; left: -999px; top: 0; background: var(--teal); color: var(--navy-900); padding: .6rem 1rem; z-index: 100; }
+.skip-link:focus { left: 0; }
+
+/* Navigation */
+.nav { position: sticky; top: 0; z-index: 50; background: rgba(6, 17, 31, .92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; min-height: 64px; gap: 1rem; }
+.brand { display: flex; align-items: center; gap: .6rem; color: var(--text); font-weight: 700; text-decoration: none; letter-spacing: .01em; }
+.brand-mark { width: 22px; height: 22px; border-radius: 6px; background: linear-gradient(135deg, var(--teal), var(--teal-deep)); }
+.menu { display: flex; gap: 1.2rem; }
+.menu a { color: var(--muted); text-decoration: none; font-size: .95rem; }
+.menu a:hover { color: var(--teal); }
+.nav-toggle { display: none; background: transparent; color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: .45rem .9rem; font: inherit; cursor: pointer; }
+
+/* Hero */
+.hero { padding: clamp(3.5rem, 9vw, 7rem) 0 clamp(2.5rem, 6vw, 4.5rem); background: radial-gradient(900px 400px at 85% -10%, rgba(45, 212, 191, .22), transparent 60%), linear-gradient(180deg, var(--navy-800), var(--navy-900)); }
+.kicker { margin: 0 0 .8rem; color: var(--teal); font-weight: 600; }
+.hero h1 { margin: 0 0 1rem; max-width: 18ch; font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.08; letter-spacing: -.02em; }
+.lead { max-width: 60ch; color: var(--muted); font-size: 1.15rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }
+.btn { display: inline-block; padding: .75rem 1.3rem; border-radius: 10px; font-weight: 600; text-decoration: none; border: 1px solid var(--teal); }
+.btn.primary { background: var(--teal); color: var(--navy-900); }
+.btn.primary:hover { background: #5eead4; }
+.btn.ghost { color: var(--teal); }
+.btn.ghost:hover { background: rgba(45, 212, 191, .1); }
+
+/* Sections */
+.section { padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
+.section h2 { margin: 0 0 .5rem; font-size: clamp(1.6rem, 3.5vw, 2.1rem); letter-spacing: -.01em; }
+.section h3 { margin: 0 0 .6rem; font-size: 1.1rem; color: var(--teal); }
+.muted { color: var(--muted); max-width: 70ch; }
+
+/* Tableau frame */
+.viz-frame { position: relative; margin-top: 1.5rem; min-height: 620px; background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: 0 20px 60px rgba(0, 0, 0, .45); }
+tableau-viz { display: block; width: 100%; height: 820px; }
+.viz-loading, .viz-error { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .8rem; padding: 1.5rem; text-align: center; background: var(--navy-800); color: var(--text); z-index: 2; }
+.viz-loading[hidden], .viz-error[hidden] { display: none; }
+.viz-error p { margin: 0; max-width: 46ch; }
+.spinner { width: 34px; height: 34px; border: 3px solid var(--line); border-top-color: var(--teal); border-radius: 50%; animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* KPI cards */
+.kpis { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1rem; }
+.kpi { padding: 1.3rem; background: linear-gradient(160deg, var(--navy-700), var(--navy-800)); border: 1px solid var(--line); border-radius: 14px; }
+.kpi-value { display: block; font-size: 2rem; font-weight: 700; color: var(--teal); line-height: 1.2; }
+.kpi-value small { font-size: 1rem; color: var(--muted); font-weight: 500; }
+.kpi-label { color: var(--muted); font-size: .95rem; }
+
+/* Content blocks */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 1.2rem; }
+.plain { margin: 0; padding-left: 1.2rem; }
+.plain li { margin-bottom: .6rem; }
+.guide { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.5rem 0 0; }
+.guide-item { padding: 1rem 1.2rem; border-left: 3px solid var(--teal); background: var(--navy-800); border-radius: 0 10px 10px 0; }
+.guide dt { font-weight: 600; }
+.guide dd { margin: .2rem 0 0; color: var(--muted); font-size: .95rem; }
+.notice { display: inline-block; padding: .5rem .9rem; border: 1px dashed var(--teal-deep); border-radius: 8px; color: var(--muted); }
+.insights { padding-left: 1.2rem; }
+.insights li { margin-bottom: .6rem; }
+.stack { list-style: none; padding: 0; margin: 1.2rem 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+.stack li { display: flex; flex-direction: column; padding: 1rem 1.2rem; border: 1px solid var(--line); border-radius: 12px; }
+.stack span { color: var(--muted); font-size: .95rem; }
+
+/* Footer */
+.footer { border-top: 1px solid var(--line); background: var(--navy-800); padding: 2rem 0; color: var(--muted); }
+.footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+.footer p { margin: 0; }
+.footer a { margin-left: 1.2rem; }
+
+/* Responsive */
+@media (max-width: 860px) {
+  .two-col { grid-template-columns: 1fr; gap: 1.5rem; }
+  .nav-toggle { display: inline-block; }
+  .menu { display: none; position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; gap: 0; padding: .5rem 1.25rem 1rem; background: var(--navy-900); border-bottom: 1px solid var(--line); }
+  .menu.open { display: flex; }
+  .menu a { padding: .7rem 0; }
+  tableau-viz { height: 700px; }
+  .viz-frame { min-height: 520px; }
+  .footer a { margin: 0 1.2rem 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .spinner { animation: none; }
+}
